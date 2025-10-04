@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calendarios Seghos</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f7f9fb;
+        text-align: center;
+        padding: 60px;
+      }
+      h1 {
+        color: #222;
+        margin-bottom: 40px;
+      }
+      .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      a {
+        display: inline-block;
+        text-decoration: none;
+        padding: 12px 25px;
+        border-radius: 8px;
+        font-size: 1.2em;
+        color: white;
+        width: 300px;
+        text-align: center;
+        transition: 0.2s;
+      }
+      a.div { background: #c92a2a; }
+      a.ter { background: #2a6fc9; }
+      a.terr { background: #2aa84a; }
+      a:hover { opacity: 0.85; transform: scale(1.03); }
+      footer {
+        margin-top: 50px;
+        color: #666;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calendarios C.D. Seghos - Temporada 2025/2026</h1>
+    <div class="links">
+      <a href="model1_calendar.html" class="div">📅 División de Honor - Calendario Interactivo</a>
+      <a href="model2_table.html" class="ter">📊 Tercera Nacional - Tabla Dinámica</a>
+      <a href="model3_mixed.html" class="terr">🧩 Territorial - Versión Mixta</a>
+    </div>
+    <footer>Actualiza los datos en <code>matches.json</code> para modificar los partidos</footer>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Modelo 2 - Tabla dinámica (Seghos)</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <style>body{font-family:Arial;padding:12px} .home{background:#ffecec} .away{background:#ecffe8}</style>
+</head>
+<body>
+  <h2>Tabla de partidos - Seghos (Modelo 2)</h2>
+  <p>Filtra por equipo o competición:</p>
+  <table id="matches" class="display" style="width:100%">
+    <thead><tr><th>Fecha</th><th>Hora</th><th>Equipo</th><th>Oponente</th><th>Competición</th><th>Casa/Fuera</th></tr></thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script>
+    async function load(){
+      const res = await fetch('matches.json');
+      const data = await res.json();
+      const tbody = document.querySelector('#matches tbody');
+      data.forEach(m=>{
+        const tr = document.createElement('tr');
+        tr.className = m.homeAway==='Home'? 'home':'away';
+        tr.innerHTML = `<td>${m.date}</td><td>${m.time}</td><td>${m.team}</td><td>${m.opponent}</td><td>${m.competition}</td><td>${m.homeAway}</td>`;
+        tbody.appendChild(tr);
+      });
+      $('#matches').DataTable({order:[[0,'asc'],[1,'asc']]});
+    }
+    load();
+  </script>
+</body>
+</html>
