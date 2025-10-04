@@ -1,1 +1,0 @@
-Instrucciones para ejecutar los modelos. Ejecutar python -m http.server y abrir el HTML correspondiente.
