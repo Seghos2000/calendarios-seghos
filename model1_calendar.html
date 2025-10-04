@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Modelo 1 - Calendario interactivo (Seghos)</title>
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+  <!-- FullCalendar CSS desde unpkg -->
+  <link href="https://unpkg.com/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
   <style>
     body { font-family: Arial, Helvetica, sans-serif; padding: 12px; }
     #calendar { max-width: 1100px; margin: 0 auto; }
@@ -25,36 +26,41 @@
 
   <div id="calendar"></div>
 
-  <!-- FullCalendar JS -->
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js" defer></script>
+  <!-- FullCalendar JS desde unpkg -->
+  <script src="https://unpkg.com/fullcalendar@6.1.8/main.min.js" defer></script>
 
   <!-- Script del calendario -->
   <script defer>
     async function loadMatches() {
-      // URL absoluta de matches.json para GitHub Pages
-      const res = await fetch('https://seghos2000.github.io/calendarios-seghos/matches.json');
-      const data = await res.json();
-      return data.map(m => {
-        const colorKey = (m.team.includes('ETM') ? 'div' : (m.competition.includes('Territorial') ? 'terr' : 'ter')) 
-                          + (m.homeAway === 'Home' ? '-home' : '-away');
-        const colors = {
-          'div-home':'#c92a2a','div-away':'#f28b8b',
-          'ter-home':'#2a6fc9','ter-away':'#8fb6f8',
-          'terr-home':'#2aa84a','terr-away':'#8fd9a5'
-        };
-        return {
-          title: `${m.team} vs ${m.opponent} (${m.time})`,
-          start: `${m.date}T${m.time}:00`,
-          allDay: false,
-          extendedProps: m,
-          backgroundColor: colors[colorKey] || '#666',
-          borderColor: colors[colorKey] || '#666'
-        };
-      });
+      try {
+        const res = await fetch('https://seghos2000.github.io/calendarios-seghos/matches.json');
+        if (!res.ok) throw new Error('No se pudo cargar matches.json');
+        const data = await res.json();
+        return data.map(m => {
+          const colorKey = (m.team.includes('ETM') ? 'div' : (m.competition.includes('Territorial') ? 'terr' : 'ter')) 
+                            + (m.homeAway === 'Home' ? '-home' : '-away');
+          const colors = {
+            'div-home':'#c92a2a','div-away':'#f28b8b',
+            'ter-home':'#2a6fc9','ter-away':'#8fb6f8',
+            'terr-home':'#2aa84a','terr-away':'#8fd9a5'
+          };
+          return {
+            title: `${m.team} vs ${m.opponent} (${m.time})`,
+            start: `${m.date}T${m.time}:00`,
+            allDay: false,
+            extendedProps: m,
+            backgroundColor: colors[colorKey] || '#666',
+            borderColor: colors[colorKey] || '#666'
+          };
+        });
+      } catch (err) {
+        console.error(err);
+        alert('Error al cargar los partidos. Revisa la consola.');
+        return [];
+      }
     }
 
     document.addEventListener('DOMContentLoaded', async function() {
-      // Esperamos que FullCalendar esté definido
       if (typeof FullCalendar === 'undefined') {
         console.error('FullCalendar no se ha cargado correctamente.');
         return;
@@ -62,6 +68,7 @@
 
       const calendarEl = document.getElementById('calendar');
       const events = await loadMatches();
+
       const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         headerToolbar: {
