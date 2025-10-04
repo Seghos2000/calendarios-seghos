@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>Modelo 3 - Mixto (Calendario + Tabla)</title>
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
   <style>
     body{font-family:Arial;padding:12px;display:flex;gap:20px}
@@ -26,6 +25,7 @@
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script>
     async function loadMatches(){
       const res = await fetch('matches.json');
@@ -48,4 +48,5 @@
 </body>
 
 </html>
+
 
