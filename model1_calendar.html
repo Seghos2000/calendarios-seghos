@@ -1,84 +1,89 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Modelo 1 - Calendario interactivo (Seghos)</title>
-  <!-- FullCalendar CSS desde unpkg -->
-  <link href="https://unpkg.com/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendario Seghos</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet" />
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; padding: 12px; }
-    #calendar { max-width: 1100px; margin: 0 auto; }
-    .legend { margin: 10px auto; max-width: 1100px; display: flex; gap: 12px; flex-wrap: wrap; }
-    .legend span { padding: 6px 10px; border-radius: 6px; color: #fff; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    #calendar {
+      max-width: 900px;
+      margin: auto;
+    }
   </style>
 </head>
 <body>
-  <h2>Calendario interactivo - Seghos (Modelo 1)</h2>
-
-  <div class="legend">
-    <span style="background:#c92a2a">Seghos ETM (División) - Casa</span>
-    <span style="background:#f28b8b">Seghos ETM (División) - Fuera</span>
-    <span style="background:#2a6fc9">Seghos Espirdo (Tercera) - Casa</span>
-    <span style="background:#8fb6f8">Seghos Espirdo (Tercera) - Fuera</span>
-    <span style="background:#2aa84a">Seghos Espirdo (Territorial) - Casa</span>
-    <span style="background:#8fd9a5">Seghos Espirdo (Territorial) - Fuera</span>
-  </div>
-
+  <h1>Calendario de Partidos Seghos</h1>
   <div id="calendar"></div>
 
-  <!-- Script del calendario usando ES Module -->
-  <script type="module">
-    import { Calendar } from 'https://unpkg.com/fullcalendar@6.1.8/main.min.js';
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script>
+    // Colores base por equipo
+    const teamColors = {
+      "Seghos ETM": "#007bff",        // Azul
+      "Seghos Espirdo Tercera": "#28a745", // Verde
+      "Seghos Espirdo Territorial": "#ffc107" // Amarillo
+    };
 
-    async function loadMatches() {
-      try {
-        const res = await fetch('https://seghos2000.github.io/calendarios-seghos/matches.json');
-        if (!res.ok) throw new Error('No se pudo cargar matches.json');
-        const data = await res.json();
-        return data.map(m => {
-          const colorKey = (m.team.includes('ETM') ? 'div' : (m.competition.includes('Territorial') ? 'terr' : 'ter')) 
-                            + (m.homeAway === 'Home' ? '-home' : '-away');
-          const colors = {
-            'div-home':'#c92a2a','div-away':'#f28b8b',
-            'ter-home':'#2a6fc9','ter-away':'#8fb6f8',
-            'terr-home':'#2aa84a','terr-away':'#8fd9a5'
-          };
+    // Colores más claros para partidos fuera de casa
+    const awayColors = {
+      "Seghos ETM": "#80bdff",
+      "Seghos Espirdo Tercera": "#a8e5b9",
+      "Seghos Espirdo Territorial": "#ffe58f"
+    };
+
+    // Cargar el archivo JSON
+    fetch('matches.json')
+      .then(response => response.json())
+      .then(data => {
+        const events = data.map(match => {
+          // Determinar equipo y competición
+          let teamKey = match.team;
+          if (match.team === "Seghos Espirdo") {
+            if (match.competition === "Tercera Nacional") {
+              teamKey = "Seghos Espirdo Tercera";
+            } else if (match.competition === "Territorial") {
+              teamKey = "Seghos Espirdo Territorial";
+            }
+          }
+
           return {
-            title: `${m.team} vs ${m.opponent} (${m.time})`,
-            start: `${m.date}T${m.time}:00`,
-            allDay: false,
-            extendedProps: m,
-            backgroundColor: colors[colorKey] || '#666',
-            borderColor: colors[colorKey] || '#666'
+            title: `${match.team} vs ${match.opponent}`,
+            start: `${match.date}T${match.time}`,
+            backgroundColor: match.homeAway === "Home" ? teamColors[teamKey] : awayColors[teamKey],
+            borderColor: match.homeAway === "Home" ? teamColors[teamKey] : awayColors[teamKey],
+            extendedProps: {
+              competition: match.competition,
+              homeAway: match.homeAway,
+              place: match.place
+            }
           };
         });
-      } catch (err) {
-        console.error(err);
-        alert('Error al cargar los partidos. Revisa la consola.');
-        return [];
-      }
-    }
 
-    document.addEventListener('DOMContentLoaded', async () => {
-      const calendarEl = document.getElementById('calendar');
-      const events = await loadMatches();
+        const calendar = new FullCalendar.Calendar(document.getElementById('calendar'), {
+          initialView: 'dayGridMonth',
+          locale: 'es',
+          headerToolbar: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,listWeek'
+          },
+          events: events,
+          eventDidMount: function(info) {
+            const props = info.event.extendedProps;
+            info.el.title = `${props.competition} - ${props.homeAway === "Home" ? "Local" : "Visitante"}`;
+          }
+        });
 
-      const calendar = new Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,listWeek'
-        },
-        events,
-        eventClick: info => {
-          const e = info.event.extendedProps;
-          alert(`${info.event.title}\nCompetición: ${e.competition}\nLugar: ${e.homeAway}`);
-        }
+        calendar.render();
+      })
+      .catch(error => {
+        console.error("Error al cargar el archivo JSON:", error);
       });
-
-      calendar.render();
-    });
   </script>
 </body>
 </html>
