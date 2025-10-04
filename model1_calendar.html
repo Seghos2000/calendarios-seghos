@@ -26,11 +26,10 @@
 
   <div id="calendar"></div>
 
-  <!-- FullCalendar JS desde unpkg -->
-  <script src="https://unpkg.com/fullcalendar@6.1.8/main.min.js" defer></script>
+  <!-- Script del calendario usando ES Module -->
+  <script type="module">
+    import { Calendar } from 'https://unpkg.com/fullcalendar@6.1.8/main.min.js';
 
-  <!-- Script del calendario -->
-  <script defer>
     async function loadMatches() {
       try {
         const res = await fetch('https://seghos2000.github.io/calendarios-seghos/matches.json');
@@ -60,16 +59,11 @@
       }
     }
 
-    document.addEventListener('DOMContentLoaded', async function() {
-      if (typeof FullCalendar === 'undefined') {
-        console.error('FullCalendar no se ha cargado correctamente.');
-        return;
-      }
-
+    document.addEventListener('DOMContentLoaded', async () => {
       const calendarEl = document.getElementById('calendar');
       const events = await loadMatches();
 
-      const calendar = new FullCalendar.Calendar(calendarEl, {
+      const calendar = new Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         headerToolbar: {
           left: 'prev,next today',
@@ -77,11 +71,12 @@
           right: 'dayGridMonth,timeGridWeek,listWeek'
         },
         events,
-        eventClick: function(info) {
+        eventClick: info => {
           const e = info.event.extendedProps;
           alert(`${info.event.title}\nCompetición: ${e.competition}\nLugar: ${e.homeAway}`);
         }
       });
+
       calendar.render();
     });
   </script>
