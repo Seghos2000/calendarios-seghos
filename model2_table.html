@@ -21,10 +21,12 @@
       const res = await fetch('matches.json');
       const data = await res.json();
       const tbody = document.querySelector('#matches tbody');
+      const fechaFormateada = new Date(m.date).toLocaleDateString('es-ES');
       data.forEach(m=>{
         const tr = document.createElement('tr');
+        const lugarTraducido = m.homeAway === 'Home' ? 'Casa' : 'Fuera';
         tr.className = m.homeAway==='Home'? 'home':'away';
-        tr.innerHTML = `<td>${m.date}</td><td>${m.time}</td><td>${m.team}</td><td>${m.opponent}</td><td>${m.competition}</td><td>${m.homeAway}</td>`;
+        tr.innerHTML = `<td>${fechaFormateada}</td><td>${m.time}</td><td>${m.team}</td><td>${m.opponent}</td><td>${m.competition}</td><td>${lugarTraducido}</td>`;
         tbody.appendChild(tr);
       });
       $('#matches').DataTable({order:[[0,'asc'],[1,'asc']]});
@@ -34,4 +36,5 @@
 </body>
 
 </html>
+
 
