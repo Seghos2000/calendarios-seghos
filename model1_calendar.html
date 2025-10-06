@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Modelo 1 - Calendario interactivo (Seghos)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
   <style>
     body{font-family:Arial,Helvetica,sans-serif;padding:12px}
@@ -21,8 +22,9 @@
     <span style="background:#2aa84a">Seghos Espirdo (Territorial) - Casa</span>
     <span style="background:#8fd9a5">Seghos Espirdo (Territorial) - Fuera</span>
   </div>
-  <div id='calendar'></div>
-
+ <div style="overflow-x:auto;">
+	<div id='calendar'></div>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/es.global.min.js"></script>
 
@@ -81,6 +83,7 @@ background:#fff;border:2px solid #444;padding:20px;z-index:1000;box-shadow:0 0 1
 </body>
 
 </html>
+
 
 
 
