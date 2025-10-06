@@ -24,6 +24,8 @@
   <div id='calendar'></div>
 
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/es.global.min.js"></script>
+
   <script>
     async function loadMatches(){
       const res = await fetch('matches.json');
@@ -50,6 +52,8 @@
       const calendarEl = document.getElementById('calendar');
       const events = await loadMatches();
       const calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: 'es',
+        firstDay: 1,
         initialView: 'dayGridMonth',
         headerToolbar: {left:'prev,next today',center:'title',right:'dayGridMonth,timeGridWeek,listWeek'},
         events,
@@ -64,3 +68,4 @@
 </body>
 
 </html>
+
