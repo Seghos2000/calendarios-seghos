@@ -16,6 +16,15 @@
 
   <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/plug-ins/1.13.6/sorting/datetime-moment.js"></script>
+  <script src="https://momentjs.com/downloads/moment.min.js"></script>
+  <script>
+    // Configura moment.js para español
+    moment.locale('es');
+    // Activa el plugin de ordenación por fecha
+    $.fn.dataTable.moment('DD/MM/YYYY');
+</script>
+
   <script>
     async function load(){
       const res = await fetch('matches.json');
@@ -36,6 +45,7 @@
 </body>
 
 </html>
+
 
 
 
