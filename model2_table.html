@@ -39,7 +39,9 @@
       const tbody = document.querySelector('#matches tbody');   
       data.forEach(m=>{
         const tr = document.createElement('tr');
-        const fechaFormateada = new Date(m.date).toLocaleDateString('es-ES');
+        const fechaFormateada = moment(m.date).format('DD/MM/YYYY');
+
+       // const fechaFormateada = new Date(m.date).toLocaleDateString('es-ES');
         const lugarTraducido = m.homeAway === 'Home' ? 'Casa' : 'Fuera';
         tr.className = m.homeAway==='Home'? 'home':'away';
         tr.innerHTML = `<td>${fechaFormateada}</td><td>${m.time}</td><td>${m.team}</td><td>${m.opponent}</td><td>${m.competition}</td><td>${lugarTraducido}</td>`;
@@ -52,6 +54,7 @@
 </body>
 
 </html>
+
 
 
 
