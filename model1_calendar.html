@@ -31,7 +31,7 @@
       const res = await fetch('matches.json');
       const data = await res.json();
       return data.map(m=>{
-        const colorKey = (m.team.includes('ETM')? 'div': (m.competition.includes('Territorial')? 'terr':'ter')) + (m.homeAway==='Espirdo'?'-Espirdo':'-fuera');
+        const colorKey = (m.team.includes('ETM')? 'div': (m.competition.includes('Territorial')? 'terr':'ter')) + (m.homeAway==='Home'?'-home':'-away');
         const colors = {
           'div-home':'#c92a2a','div-away':'#f28b8b',
           'ter-home':'#2a6fc9','ter-away':'#8fb6f8',
@@ -68,6 +68,4 @@
 </body>
 
 </html>
-
-
 
