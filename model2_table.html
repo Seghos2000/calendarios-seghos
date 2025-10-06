@@ -23,7 +23,7 @@
       const tbody = document.querySelector('#matches tbody');
       data.forEach(m=>{
         const tr = document.createElement('tr');
-        tr.className = m.homeAway==='Home'? 'casa':'fuera';
+        tr.className = m.homeAway==='Home'? 'home':'away';
         tr.innerHTML = `<td>${m.date}</td><td>${m.time}</td><td>${m.team}</td><td>${m.opponent}</td><td>${m.competition}</td><td>${m.homeAway}</td>`;
         tbody.appendChild(tr);
       });
@@ -34,3 +34,4 @@
 </body>
 
 </html>
+
