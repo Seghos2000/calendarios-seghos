@@ -23,9 +23,7 @@
     moment.locale('es');
     // Activa el plugin de ordenación por fecha
     $.fn.dataTable.moment('DD/MM/YYYY');
-</script>
 
-  <script>
     async function load(){
       const res = await fetch('matches.json');
       const data = await res.json();
@@ -45,6 +43,7 @@
 </body>
 
 </html>
+
 
 
 
