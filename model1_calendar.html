@@ -57,14 +57,27 @@
         initialView: 'dayGridMonth',
         headerToolbar: {left:'prev,next today',center:'title',right:'dayGridMonth,timeGridWeek,listWeek'},
         events,
-        eventClick: function(info){
-          const e = info.event.extendedProps;
-          alert(`${info.event.title}\nCompetición: ${e.competition}\nLugar: ${e.homeAway}`);
-        }
+	eventClick: function(info){
+  	const e = info.event.extendedProps;
+  	const lugarTraducido = e.homeAway === 'Home' ? 'Espirdo' : 'Fuera';
+  	const mensaje = `
+    	<strong>${info.event.title}</strong><br>
+    	<b>Competición:</b> ${e.competition}<br>
+    	<b>Lugar:</b> ${lugarTraducido}
+  	`;
+  	document.getElementById('popup-content').innerHTML = mensaje;
+  	document.getElementById('popup').style.display = 'block';
+	}
       });
       calendar.render();
     });
   </script>
+<div id="popup" style="display:none;position:fixed;top:20%;left:50%;transform:translateX(-50%);
+background:#fff;border:2px solid #444;padding:20px;z-index:1000;box-shadow:0 0 10px rgba(0,0,0,0.3)">
+  <div id="popup-content"></div>
+  <button onclick="document.getElementById('popup').style.display='none'">Cerrar</button>
+</div>
+
 </body>
 
 </html>
