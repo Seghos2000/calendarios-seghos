@@ -7,26 +7,26 @@
   {"date":"2025-10-19","time":"12:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"CTM Coslada","homeAway":"Away","place":""},
 
   {"date":"2025-10-25","time":"10:30","competition":"Territorial","team":"Seghos Espirdo","opponent":"CTM Cabrerizos","homeAway":"Home","place":""},
-  {"date":"2025-10-25","time":"10:30","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"Rondilla Nación A","homeAway":"Home","place":""},
-  {"date":"2025-10-25","time":"16:30","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"Rondilla Nación B","homeAway":"Home","place":""},
+  {"date":"2025-10-25","time":"10:30","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"Rondilla Nación A","homeAway":"Away","place":""},
+  {"date":"2025-10-25","time":"16:30","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"Rondilla Nación B","homeAway":"Away","place":""},
 
   {"date":"2025-10-26","time":"12:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Vilagarcía TM","homeAway":"Home","place":""},
   {"date":"2025-11-01","time":"17:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Boadilla TM","homeAway":"Away","place":""},
 
   {"date":"2025-11-08","time":"10:30","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"CD Mirandes","homeAway":"Home","place":""},
-  {"date":"2025-11-08","time":"11:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Concello Cambados","homeAway":"Away","place":""},
+  {"date":"2025-11-08","time":"11:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Concello Cambados","homeAway":"Home","place":""},
   {"date":"2025-11-08","time":"11:00","competition":"Territorial","team":"Seghos Espirdo","opponent":"Topspin Valladolid C","homeAway":"Away","place":""},
   {"date":"2025-11-08","time":"16:00","competition":"Territorial","team":"Seghos Espirdo","opponent":"CD Pisuerga A","homeAway":"Away","place":""},
 
   {"date":"2025-11-15","time":"10:30","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"Topspin Valladolid A","homeAway":"Home","place":""},
-  {"date":"2025-11-16","time":"12:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"ETM Torrelavega","homeAway":"Away","place":""},
+  {"date":"2025-11-16","time":"12:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"ETM Torrelavega","homeAway":"Home","place":""},
   {"date":"2025-11-22","time":"17:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Arteal","homeAway":"Away","place":""},
   {"date":"2025-11-23","time":"10:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Oroso TM","homeAway":"Away","place":""},
 
   {"date":"2025-11-29","time":"10:30","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"CTM CAEP Soria","homeAway":"Home","place":""},
   {"date":"2025-11-30","time":"11:00","competition":"Territorial","team":"Seghos Espirdo","opponent":"Cisterniga TM A","homeAway":"Away","place":""},
 
-  {"date":"2025-12-13","time":"10:30","competition":"Territorial","team":"Seghos Espirdo","opponent":"CD TM Las Lanchuelas","homeAway":"Away","place":""},
+  {"date":"2025-12-13","time":"10:30","competition":"Territorial","team":"Seghos Espirdo","opponent":"CD TM Las Lanchuelas","homeAway":"Home","place":""},
   {"date":"2025-12-13","time":"17:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Progreso Móstoles","homeAway":"Away","place":""},
 
   {"date":"2026-01-10","time":"17:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Madrid Capital TM","homeAway":"Away","place":""},
@@ -36,14 +36,14 @@
 
   {"date":"2026-01-24","time":"10:30","competition":"Territorial","team":"Seghos Espirdo","opponent":"CD ATM Trescasas","homeAway":"Home","place":""},
   {"date":"2026-01-24","time":"11:00","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"CD Atlético Burgos TM","homeAway":"Away","place":""},
-  {"date":"2026-01-24","time":"16:00","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"Universidad de Burgos","homeAway":"Home","place":""},
+  {"date":"2026-01-24","time":"16:00","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"Universidad de Burgos","homeAway":"Away","place":""},
 
   {"date":"2026-01-25","time":"12:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"CTM Coslada","homeAway":"Home","place":""},
   {"date":"2026-01-31","time":"16:00","competition":"División de Honor Nacional","team":"ETM Torrelavega","opponent":"Seghos ETM","homeAway":"Away","place":""},
 
   {"date":"2026-02-07","time":"12:00","competition":"Territorial","team":"Seghos Espirdo","opponent":"CD TM Las Lanchuelas","homeAway":"Away","place":""},
   {"date":"2026-02-07","time":"11:00","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"Topspin Valladolid A","homeAway":"Away","place":""},
-  {"date":"2026-02-07","time":"17:00","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"CD Río Duero","homeAway":"Home","place":""},
+  {"date":"2026-02-07","time":"17:00","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"CD Río Duero","homeAway":"Away","place":""},
 
   {"date":"2026-02-08","time":"12:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Oroso TM","homeAway":"Home","place":""},
 
