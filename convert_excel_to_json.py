@@ -3,19 +3,34 @@ import json
 
 # Cargar el Excel
 excel_file = 'm_ranking Seghos 2025_26.xlsx'
-xl = pd.ExcelFile(excel_file)
+df = pd.read_excel(excel_file, header=None)
 
 # Diccionario final
 ranking = {}
+categoria_actual = None
+columnas = ["Jugador", "Jugados", "Ganados", "Perdidos", "Jue. favor", "Jue. contra", "% victorias"]
+bloque = []
 
-# Procesar cada hoja o sección
-for sheet_name in xl.sheet_names:
-    df = xl.parse(sheet_name)
-    df = df.dropna(how='all')  # Eliminar filas vacías
-    if 'Jugador' in df.columns:
-        jugadores = df.to_dict(orient='records')
-        ranking[sheet_name] = jugadores
+for _, row in df.iterrows():
+    fila = row.tolist()
+    if any(isinstance(cell, str) and "División" in cell for cell in fila):
+        # Guardar bloque anterior
+        if categoria_actual and bloque:
+            bloque_df = pd.DataFrame(bloque, columns=columnas)
+            ranking[categoria_actual] = bloque_df.to_dict(orient='records')
+            bloque = []
+        # Nueva categoría
+        categoria_actual = next(cell for cell in fila if isinstance(cell, str))
+    elif fila[0] == "Jugador":
+        continue  # encabezado
+    elif categoria_actual and isinstance(fila[0], str):
+        bloque.append(fila[:7])  # solo las primeras 7 columnas
 
-# Guardar como JSON
+# Guardar último bloque
+if categoria_actual and bloque:
+    bloque_df = pd.DataFrame(bloque, columns=columnas)
+    ranking[categoria_actual] = bloque_df.to_dict(orient='records')
+
+# Exportar a JSON
 with open('ranking.json', 'w', encoding='utf-8') as f:
     json.dump(ranking, f, ensure_ascii=False, indent=2)
