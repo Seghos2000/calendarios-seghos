@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ranking Seghos 2025/26</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f7f9fb;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .category {
+      margin-bottom: 60px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2a2a2a;
+    }
+    table {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏓 Ranking de Jugadores SEGHOS 2025/26</h1>
+  <div id="contenedor-ranking"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+  <script>
+    async function cargarRanking() {
+      const res = await fetch('ranking.json');
+      const data = await res.json();
+      const contenedor = document.getElementById('contenedor-ranking');
+
+      Object.entries(data).forEach(([categoria, jugadores], index) => {
+        if (!jugadores.length) return; // omitir categorías vacías
+
+        const idTabla = `tabla-${index}`;
+        const div = document.createElement('div');
+        div.className = 'category';
+        div.innerHTML = `
+          <h2>${categoria}</h2>
+          <table id="${idTabla}" class="display">
+            <thead>
+              <tr>
+                <th>Jugador</th>
+                <th>Jugados</th>
+                <th>Ganados</th>
+                <th>Perdidos</th>
+                <th>Jue. favor</th>
+                <th>Jue. contra</th>
+                <th>% Victorias</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${jugadores.map(j => `
+                <tr>
+                  <td>${j.jugador}</td>
+                  <td>${j.jugados}</td>
+                  <td>${j.ganados}</td>
+                  <td>${j.perdidos}</td>
+                  <td>${j.favor}</td>
+                  <td>${j.contra}</td>
+                  <td>${j.victorias}</td>
+                </tr>
+              `).join('')}
+            </tbody>
+          </table>
+        `;
+        contenedor.appendChild(div);
+        $(`#${idTabla}`).DataTable();
+      });
+    }
+
+    cargarRanking();
+  </script>
+
+</body>
+</html>
+
