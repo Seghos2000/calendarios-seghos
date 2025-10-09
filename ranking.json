@@ -2,59 +2,50 @@
   "División Honor Nacional": [
     {
       "Jugador": "Mikel Izkue",
-      "Jugados": 4.0,
-      "Ganados": 3.0,
-      "Perdidos": 1.0,
-      "Jue. favor": 9.0,
-      "Jue. contra": 4.0,
+      "Jugados": 4,
+      "Ganados": 3,
+      "Perdidos": 1,
+      "Jue. favor": 9,
+      "Jue. contra": 4,
       "% victorias": 0.75
     },
     {
       "Jugador": "Aly Ghallab",
-      "Jugados": 2.0,
-      "Ganados": 2.0,
-      "Perdidos": 0.0,
-      "Jue. favor": 6.0,
-      "Jue. contra": 1.0,
+      "Jugados": 2,
+      "Ganados": 2,
+      "Perdidos": 0,
+      "Jue. favor": 6,
+      "Jue. contra": 1,
       "% victorias": 1.0
     },
     {
       "Jugador": "Daniel Sanz",
-      "Jugados": 4.0,
-      "Ganados": 4.0,
-      "Perdidos": 2.0,
-      "Jue. favor": 8.0,
-      "Jue. contra": 10.0,
+      "Jugados": 4,
+      "Ganados": 4,
+      "Perdidos": 2,
+      "Jue. favor": 8,
+      "Jue. contra": 10,
       "% victorias": 1.0
     },
     {
       "Jugador": "Javier Bueno",
-      "Jugados": 2.0,
-      "Ganados": 2.0,
-      "Perdidos": 2.0,
-      "Jue. favor": 0.0,
-      "Jue. contra": 3.0,
+      "Jugados": 2,
+      "Ganados": 2,
+      "Perdidos": 2,
+      "Jue. favor": 0,
+      "Jue. contra": 3,
       "% victorias": 1.0
-    },
-    {
-      "Jugador": "Tercera Nacional",
-      "Jugados": NaN,
-      "Ganados": NaN,
-      "Perdidos": NaN,
-      "Jue. favor": NaN,
-      "Jue. contra": NaN,
-      "% victorias": NaN
     }
   ],
-  "División de Honor Territorial": [
+  "Tercera Nacional": [
     {
-      "Jugador": "DOBLES",
-      "Jugados": NaN,
-      "Ganados": NaN,
-      "Perdidos": NaN,
-      "Jue. favor": NaN,
-      "Jue. contra": NaN,
-      "% victorias": NaN
+      "Jugador": "Antonio Sanz",
+      "Jugados": 2,
+      "Ganados": 2,
+      "Perdidos": 0,
+      "Jue. favor": 6,
+      "Jue. contra": 1,
+      "% victorias": 1
     }
   ]
 }
