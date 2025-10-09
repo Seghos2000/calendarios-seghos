@@ -9,9 +9,13 @@
       margin: 40px;
       background-color: #f9f9f9;
     }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
     h2 {
       margin-top: 40px;
-      color: #333;
+      color: #444;
     }
     table {
       width: 100%;
@@ -26,6 +30,21 @@
     }
     th {
       background-color: #eee;
+    }
+    .porcentaje-verde {
+      background-color: #d4edda;
+      color: #155724;
+      font-weight: bold;
+    }
+    .porcentaje-naranja {
+      background-color: #fff3cd;
+      color: #856404;
+      font-weight: bold;
+    }
+    .porcentaje-rojo {
+      background-color: #f8d7da;
+      color: #721c24;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -106,6 +125,22 @@
           if (!tbody) return;
 
           jugadores.forEach(row => {
+            const porcentaje = row["% victorias"];
+            let clase = '';
+            let texto = '';
+
+            if (porcentaje !== null && porcentaje !== undefined) {
+              const valor = Math.round(porcentaje * 100);
+              texto = valor + '%';
+              if (valor >= 50) {
+                clase = 'porcentaje-verde';
+              } else if (valor >= 25) {
+                clase = 'porcentaje-naranja';
+              } else {
+                clase = 'porcentaje-rojo';
+              }
+            }
+
             const tr = document.createElement("tr");
             tr.innerHTML = `
               <td>${row["Jugador"] ?? ''}</td>
@@ -114,8 +149,7 @@
               <td>${row["Perdidos"] ?? ''}</td>
               <td>${row["Jue. favor"] ?? ''}</td>
               <td>${row["Jue. contra"] ?? ''}</td>
-              <td>${row["% victorias"] !== null && row["% victorias"] !== undefined ? Math.round(row["% victorias"] * 100) + '%' : ''}</td>
-
+              <td class="${clase}">${texto}</td>
             `;
             tbody.appendChild(tr);
           });
