@@ -27,10 +27,17 @@ for _, row in df.iterrows():
         # Guardar bloque anterior si tiene datos
         if categoria_actual and bloque:
             bloque_df = pd.DataFrame(bloque, columns=columnas)
+            bloque_df.columns = ["Jugador", "Jugados", "Ganados", "Perdidos", "Jue. favor", "Jue. contra", "% victorias"]
             bloque_df.dropna(how='all', inplace=True)
             if not bloque_df.empty:
                 bloque_df = bloque_df.where(pd.notnull(bloque_df), None)
-                ranking[categoria_actual] = bloque_df.to_dict(orient='records')
+                bloque_df.sort_values(
+                    by=["% victorias", "Jugados", "Jue. favor"],
+                    ascending=[False, False, False],
+                    inplace=True
+            )
+            ranking[categoria_actual] = bloque_df.to_dict(orient='records')
+
             bloque = []
 
         # Nueva categoría

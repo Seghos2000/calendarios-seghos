@@ -1,15 +1,6 @@
 {
   "División Honor Nacional": [
     {
-      "Jugador": "Mikel Izkue",
-      "Jugados": 4,
-      "Ganados": 3,
-      "Perdidos": 1,
-      "Jue. favor": 9,
-      "Jue. contra": 4,
-      "% victorias": 0.75
-    },
-    {
       "Jugador": "Aly Ghallab",
       "Jugados": 2,
       "Ganados": 2,
@@ -19,33 +10,31 @@
       "% victorias": 1.0
     },
     {
+      "Jugador": "Mikel Izkue",
+      "Jugados": 4,
+      "Ganados": 3,
+      "Perdidos": 1,
+      "Jue. favor": 9,
+      "Jue. contra": 4,
+      "% victorias": 0.75
+    },
+    {
       "Jugador": "Daniel Sanz",
       "Jugados": 4,
-      "Ganados": 4,
+      "Ganados": 2,
       "Perdidos": 2,
       "Jue. favor": 8,
       "Jue. contra": 10,
-      "% victorias": 1.0
+      "% victorias": 0.5
     },
     {
       "Jugador": "Javier Bueno",
       "Jugados": 2,
-      "Ganados": 2,
+      "Ganados": 0,
       "Perdidos": 2,
       "Jue. favor": 0,
-      "Jue. contra": 3,
-      "% victorias": 1.0
-    }
-  ],
-  "Tercera Nacional": [
-    {
-      "Jugador": "Antonio Sanz",
-      "Jugados": 2,
-      "Ganados": 2,
-      "Perdidos": 0,
-      "Jue. favor": 6,
-      "Jue. contra": 1,
-      "% victorias": 1
+      "Jue. contra": 6,
+      "% victorias": 0.0
     }
   ]
 }
