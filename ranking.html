@@ -125,7 +125,9 @@
           if (!tbody) return;
 
           jugadores.forEach(row => {
+            const jugon =row["Jugador"]
             const porcentaje = row["% victorias"];
+            let nameJugon ='';
             let clase = '';
             let texto = '';
 
@@ -143,7 +145,8 @@
 
             const tr = document.createElement("tr");
             tr.innerHTML = `
-              <td>${row["Jugador"] ?? ''}</td>
+              <!-- <td>${row["Jugador"] ?? ''}</td> -->
+              <td class="${clase}">${jugon}</td>
               <td>${row["Jugados"] ?? ''}</td>
               <td>${row["Ganados"] ?? ''}</td>
               <td>${row["Perdidos"] ?? ''}</td>
