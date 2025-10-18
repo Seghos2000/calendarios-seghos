@@ -36,5 +36,34 @@
       "Jue. contra": 6,
       "% victorias": 0.0
     }
+  ],
+  "Tercera Nacional": [
+    {
+      "Jugador": "Antonio Sanz",
+      "Jugados": 2,
+      "Ganados": 2,
+      "Perdidos": 0,
+      "Jue. favor": 6,
+      "Jue. contra": 4,
+      "% victorias": 1.0
+    },
+    {
+      "Jugador": "Antonio García",
+      "Jugados": 2,
+      "Ganados": 1,
+      "Perdidos": 1,
+      "Jue. favor": 4,
+      "Jue. contra": 4,
+      "% victorias": 0.5
+    },
+    {
+      "Jugador": "Javier Bueno",
+      "Jugados": 2,
+      "Ganados": 0,
+      "Perdidos": 2,
+      "Jue. favor": 0,
+      "Jue. contra": 6,
+      "% victorias": 0.0
+    }
   ]
 }
