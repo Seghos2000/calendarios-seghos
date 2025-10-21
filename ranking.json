@@ -43,7 +43,7 @@
       "Perdidos": 2,
       "Jue. favor": 0,
       "Jue. contra": 6,
-      "% victorias": NaN
+      "% victorias": 0.0
     }
   ],
   "Tercera Nacional": [
@@ -112,7 +112,7 @@
       "Perdidos": 1,
       "Jue. favor": 2,
       "Jue. contra": 3,
-      "% victorias": 0
+      "% victorias": 0.0
     }
   ]
 }
