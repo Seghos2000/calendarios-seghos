@@ -11,21 +11,30 @@
     },
     {
       "Jugador": "Mikel Izkue",
-      "Jugados": 8,
-      "Ganados": 4,
+      "Jugados": 10,
+      "Ganados": 6,
       "Perdidos": 4,
       "Jue. favor": 16,
       "Jue. contra": 14,
-      "% victorias": 0.5
+      "% victorias": 0.6
     },
     {
       "Jugador": "Daniel Sanz",
-      "Jugados": 8,
-      "Ganados": 3,
+      "Jugados": 10,
+      "Ganados": 5,
       "Perdidos": 5,
       "Jue. favor": 11,
       "Jue. contra": 20,
-      "% victorias": 0.375
+      "% victorias": 0.5
+    },
+    {
+      "Jugador": "Antonio Sanz",
+      "Jugados": 2,
+      "Ganados": 0,
+      "Perdidos": 2,
+      "Jue. favor": 1,
+      "Jue. contra": 6,
+      "% victorias": 0.0
     },
     {
       "Jugador": "Javier Bueno",
