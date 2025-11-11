@@ -69,6 +69,12 @@
   	document.getElementById('popup-content').innerHTML = mensaje;
   	document.getElementById('popup').style.display = 'block';
 	}
+         eventDidMount: function(info) {
+    		// aplica el color de fondo al texto
+   	 info.el.style.backgroundColor = info.event.backgroundColor;
+   	 info.el.style.color = '#000'; // texto blanco (puedes cambiarlo)
+   	 info.el.style.border = 'none'; // opcional: quita el borde
+ 	 }
       });
       calendar.render();
     });
