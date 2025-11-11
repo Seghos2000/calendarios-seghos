@@ -25,7 +25,7 @@
 
   {"date":"2025-11-29","time":"10:30","competition":"Tercera Nacional","team":"Seghos Espirdo","opponent":"CTM CAEP Soria","homeAway":"Home","place":""},
   {"date":"2025-11-30","time":"11:00","competition":"Territorial","team":"Seghos Espirdo","opponent":"Cisterniga TM A","homeAway":"Away","place":""},
-  {"date":"2025-12-06","time":"09:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"PRE-ESTATAL","homeAway":"Away","place":""},
+  {"date":"2025-12-06","time":"09:00","competition":"otras competiciones","team":"Competición","opponent":"PRE-ESTATAL","homeAway":"Away","place":""},
 
   {"date":"2025-12-13","time":"10:30","competition":"Territorial","team":"Seghos Espirdo","opponent":"CD TM Las Lanchuelas","homeAway":"Home","place":""},
   {"date":"2025-12-13","time":"17:00","competition":"División de Honor Nacional","team":"Seghos ETM","opponent":"Progreso Móstoles","homeAway":"Away","place":""},
