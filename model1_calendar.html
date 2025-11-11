@@ -63,6 +63,11 @@
         initialView: 'dayGridMonth',
         headerToolbar: {left:'prev,next today',center:'title',right:'dayGridMonth,timeGridWeek,listWeek'},
         events,
+	eventTimeFormat: { // <--- Aquí personalizamos el formato
+  	   hour: 'numeric',
+ 	   minute: '2-digit',   // siempre muestra los minutos
+ 	   hour12: false        // formato 24h
+	},
         eventClick: function(info){
           const e = info.event.extendedProps;
           const lugarTraducido = e.homeAway === 'Home' ? 'Espirdo' : 'Fuera';
