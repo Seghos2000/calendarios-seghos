@@ -22,7 +22,8 @@
     <span style="background:#8fd9a5">Seghos Espirdo (Territorial) - Fuera</span>
     <span style="background:#f5ad1d">Otras competiciones</span>
   </div>
-	<div id='calendar'></div>
+  <div id='calendar'></div>
+
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/es.global.min.js"></script>
 
@@ -31,12 +32,15 @@
       const res = await fetch('matches.json');
       const data = await res.json();
       return data.map(m=>{
-        const colorKey = (m.team.includes('ETM')? 'div': (m.competition.includes('Territorial')? 'terr': m.competition.includes('otras')? 'otras' : 'ter' )) + 	(m.homeAway==='Home'?'-home':'-away');
+        const colorKey = (m.team.includes('ETM')? 'div': 
+                          (m.competition.includes('Territorial')? 'terr': 
+                          m.competition.toLowerCase().includes('otras')? 'otras' : 'ter' )) + 
+                          (m.homeAway==='Home'?'-home':'-away');
         const colors = {
           'div-home':'#c92a2a','div-away':'#f28b8b',
           'ter-home':'#2a6fc9','ter-away':'#8fb6f8',
           'terr-home':'#2aa84a','terr-away':'#8fd9a5',
-	  'otras-home':'#f5ad1d','otras-away':'#f5ad1d'
+          'otras-home':'#f5ad1d','otras-away':'#f5ad1d'
         };
         return {
           title: `${m.team} - ${m.opponent} (${m.time})`,
@@ -52,45 +56,52 @@
     document.addEventListener('DOMContentLoaded', async function() {
       const calendarEl = document.getElementById('calendar');
       const events = await loadMatches();
+
       const calendar = new FullCalendar.Calendar(calendarEl, {
         locale: 'es',
         firstDay: 1,
         initialView: 'dayGridMonth',
         headerToolbar: {left:'prev,next today',center:'title',right:'dayGridMonth,timeGridWeek,listWeek'},
-	events,
-	eventClick: function(info){
-  	const e = info.event.extendedProps;
-  	const lugarTraducido = e.homeAway === 'Home' ? 'Espirdo' : 'Fuera';
-  	const mensaje = `
-    	<strong>${info.event.title}</strong><br>
-    	<b>Competición:</b> ${e.competition}<br>
-    	<b>Lugar:</b> ${lugarTraducido}
-  	`;
-  	document.getElementById('popup-content').innerHTML = mensaje;
-  	document.getElementById('popup').style.display = 'block';
-	}
-         eventDidMount: function(info) {
-    		// aplica el color de fondo al texto
-   	 info.el.style.backgroundColor = info.event.backgroundColor;
-   	 info.el.style.color = '#000'; // texto blanco (puedes cambiarlo)
-   	 info.el.style.border = 'none'; // opcional: quita el borde
- 	 }
+        events,
+        eventClick: function(info){
+          const e = info.event.extendedProps;
+          const lugarTraducido = e.homeAway === 'Home' ? 'Espirdo' : 'Fuera';
+          const mensaje = `
+            <strong>${info.event.title}</strong><br>
+            <b>Competición:</b> ${e.competition}<br>
+            <b>Lugar:</b> ${lugarTraducido}
+          `;
+          document.getElementById('popup-content').innerHTML = mensaje;
+          document.getElementById('popup').style.display = 'block';
+        },
+        eventDidMount: function(info) {
+          // Aplica el color de fondo a todo el evento
+          info.el.style.backgroundColor = info.event.backgroundColor;
+          info.el.style.borderColor = info.event.backgroundColor;
+
+          // Ajusta el color del texto según el fondo (claro → negro, oscuro → blanco)
+          const color = info.event.backgroundColor;
+          const r = parseInt(color.substr(1,2),16);
+          const g = parseInt(color.substr(3,2),16);
+          const b = parseInt(color.substr(5,2),16);
+          const brightness = (r*299 + g*587 + b*114) / 1000; 
+          info.el.style.color = brightness > 150 ? '#000' : '#fff';
+
+          // Oculta el puntito de color
+          const dot = info.el.querySelector('.fc-event-dot');
+          if(dot) dot.style.display = 'none';
+        }
       });
+
       calendar.render();
     });
   </script>
-<div id="popup" style="display:none;position:fixed;top:20%;left:50%;transform:translateX(-50%);
-background:#fff;border:2px solid #444;padding:20px;z-index:1000;box-shadow:0 0 10px rgba(0,0,0,0.3)">
-  <div id="popup-content"></div>
-  <button onclick="document.getElementById('popup').style.display='none'">Cerrar</button>
-</div>
+
+  <div id="popup" style="display:none;position:fixed;top:20%;left:50%;transform:translateX(-50%);
+  background:#fff;border:2px solid #444;padding:20px;z-index:1000;box-shadow:0 0 10px rgba(0,0,0,0.3)">
+    <div id="popup-content"></div>
+    <button onclick="document.getElementById('popup').style.display='none'">Cerrar</button>
+  </div>
 
 </body>
-
 </html>
-
-
-
-
-
-

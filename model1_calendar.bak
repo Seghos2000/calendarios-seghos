@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Modelo 1 - Calendario interactivo (Seghos)</title>
+  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <style>
+    body{font-family:Arial,Helvetica,sans-serif;padding:12px}
+    #calendar{max-width:1100px;margin:0 auto}
+    .legend{margin:10px auto;max-width:1100px;display:flex;gap:12px}
+    .legend span{padding:6px 10px;border-radius:6px;color:#fff}
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center">Calendario</h2>
+  <div class="legend">
+    <span style="background:#c92a2a">Seghos ETM (D.H.) - Casa</span>
+    <span style="background:#f28b8b">Seghos ETM (D.H.) - Fuera</span>
+    <span style="background:#2a6fc9">Seghos Espirdo (3ª-nacional) - Casa</span>
+    <span style="background:#8fb6f8">Seghos Espirdo (3ª-nacional) - Fuera</span>
+    <span style="background:#2aa84a">Seghos Espirdo (Territorial) - Casa</span>
+    <span style="background:#8fd9a5">Seghos Espirdo (Territorial) - Fuera</span>
+    <span style="background:#f5ad1d">Otras competiciones</span>
+  </div>
+	<div id='calendar'></div>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/locales/es.global.min.js"></script>
+
+  <script>
+    async function loadMatches(){
+      const res = await fetch('matches.json');
+      const data = await res.json();
+      return data.map(m=>{
+        const colorKey = (m.team.includes('ETM')? 'div': (m.competition.includes('Territorial')? 'terr': m.competition.includes('otras')? 'otras' : 'ter' )) + 	(m.homeAway==='Home'?'-home':'-away');
+        const colors = {
+          'div-home':'#c92a2a','div-away':'#f28b8b',
+          'ter-home':'#2a6fc9','ter-away':'#8fb6f8',
+          'terr-home':'#2aa84a','terr-away':'#8fd9a5',
+	  'otras-home':'#f5ad1d','otras-away':'#f5ad1d'
+        };
+        return {
+          title: `${m.team} - ${m.opponent} (${m.time})`,
+          start: `${m.date}T${m.time}:00`,
+          allDay: false,
+          extendedProps: m,
+          backgroundColor: colors[colorKey] || '#666',
+          borderColor: colors[colorKey] || '#666'
+        }
+      })
+    }
+
+    document.addEventListener('DOMContentLoaded', async function() {
+      const calendarEl = document.getElementById('calendar');
+      const events = await loadMatches();
+      const calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: 'es',
+        firstDay: 1,
+        initialView: 'dayGridMonth',
+        headerToolbar: {left:'prev,next today',center:'title',right:'dayGridMonth,timeGridWeek,listWeek'},
+	events,
+	eventClick: function(info){
+  	const e = info.event.extendedProps;
+  	const lugarTraducido = e.homeAway === 'Home' ? 'Espirdo' : 'Fuera';
+  	const mensaje = `
+    	<strong>${info.event.title}</strong><br>
+    	<b>Competición:</b> ${e.competition}<br>
+    	<b>Lugar:</b> ${lugarTraducido}
+  	`;
+  	document.getElementById('popup-content').innerHTML = mensaje;
+  	document.getElementById('popup').style.display = 'block';
+	}
+         eventDidMount: function(info) {
+    		// aplica el color de fondo al texto
+   	 info.el.style.backgroundColor = info.event.backgroundColor;
+   	 info.el.style.color = '#000'; // texto blanco (puedes cambiarlo)
+   	 info.el.style.border = 'none'; // opcional: quita el borde
+ 	 }
+      });
+      calendar.render();
+    });
+  </script>
+<div id="popup" style="display:none;position:fixed;top:20%;left:50%;transform:translateX(-50%);
+background:#fff;border:2px solid #444;padding:20px;z-index:1000;box-shadow:0 0 10px rgba(0,0,0,0.3)">
+  <div id="popup-content"></div>
+  <button onclick="document.getElementById('popup').style.display='none'">Cerrar</button>
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
