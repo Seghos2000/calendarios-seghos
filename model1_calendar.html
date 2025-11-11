@@ -80,12 +80,13 @@
           info.el.style.borderColor = info.event.backgroundColor;
 
           // Ajusta el color del texto según el fondo (claro → negro, oscuro → blanco)
-          const color = info.event.backgroundColor;
-          const r = parseInt(color.substr(1,2),16);
-          const g = parseInt(color.substr(3,2),16);
-          const b = parseInt(color.substr(5,2),16);
-          const brightness = (r*299 + g*587 + b*114) / 1000; 
-          info.el.style.color = brightness > 150 ? '#000' : '#fff';
+          // const color = info.event.backgroundColor;
+          //const r = parseInt(color.substr(1,2),16);
+          //const g = parseInt(color.substr(3,2),16);
+          //const b = parseInt(color.substr(5,2),16);
+          //const brightness = (r*299 + g*587 + b*114) / 1000; 
+          // info.el.style.color = brightness > 150 ? '#000' : '#fff';
+	  info.el.style.color = #000;
 
           // Oculta el puntito de color
           // const dot = info.el.querySelector('.fc-event-dot');
