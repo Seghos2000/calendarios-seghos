@@ -10,30 +10,30 @@
       "% victorias": 1.0
     },
     {
-      "Jugador": "Daniel Sanz",
-      "Jugados": 12,
-      "Ganados": 7,
-      "Perdidos": 5,
-      "Jue. favor": 17,
-      "Jue. contra": 22,
-      "% victorias": 0.583333333333333
+      "Jugador": "Mikel Izkue",
+      "Jugados": 14,
+      "Ganados": 8,
+      "Perdidos": 6,
+      "Jue. favor": 25,
+      "Jue. contra": 21,
+      "% victorias": 0.571428571428571
     },
     {
-      "Jugador": "Mikel Izkue",
-      "Jugados": 12,
-      "Ganados": 6,
+      "Jugador": "Daniel Sanz",
+      "Jugados": 14,
+      "Ganados": 8,
       "Perdidos": 6,
-      "Jue. favor": 19,
-      "Jue. contra": 20,
-      "% victorias": 0.5
+      "Jue. favor": 21,
+      "Jue. contra": 27,
+      "% victorias": 0.571428571428571
     },
     {
       "Jugador": "Antonio Sanz",
-      "Jugados": 2,
+      "Jugados": 4,
       "Ganados": 0,
-      "Perdidos": 2,
+      "Perdidos": 4,
       "Jue. favor": 1,
-      "Jue. contra": 6,
+      "Jue. contra": 12,
       "% victorias": 0.0
     },
     {
@@ -76,12 +76,12 @@
   "Tercera Nacional": [
     {
       "Jugador": "Antonio García",
-      "Jugados": 8,
-      "Ganados": 5,
-      "Perdidos": 3,
-      "Jue. favor": 16,
-      "Jue. contra": 11,
-      "% victorias": 0.625
+      "Jugados": 10,
+      "Ganados": 6,
+      "Perdidos": 4,
+      "Jue. favor": 21,
+      "Jue. contra": 14,
+      "% victorias": 0.6
     },
     {
       "Jugador": "Antonio Sanz",
@@ -94,21 +94,21 @@
     },
     {
       "Jugador": "José Luis Cervigón",
-      "Jugados": 6,
+      "Jugados": 8,
       "Ganados": 3,
-      "Perdidos": 3,
-      "Jue. favor": 11,
-      "Jue. contra": 13,
-      "% victorias": 0.5
+      "Perdidos": 5,
+      "Jue. favor": 13,
+      "Jue. contra": 19,
+      "% victorias": 0.375
     },
     {
       "Jugador": "Javier Bueno",
-      "Jugados": 4,
+      "Jugados": 6,
       "Ganados": 2,
-      "Perdidos": 2,
-      "Jue. favor": 6,
-      "Jue. contra": 7,
-      "% victorias": 0.5
+      "Perdidos": 4,
+      "Jue. favor": 8,
+      "Jue. contra": 13,
+      "% victorias": 0.333333333333333
     }
   ],
   "División de Honor Territorial": [
