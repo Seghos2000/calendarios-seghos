@@ -11,29 +11,29 @@
     },
     {
       "Jugador": "Mikel Izkue",
-      "Jugados": 14,
-      "Ganados": 8,
-      "Perdidos": 6,
-      "Jue. favor": 25,
-      "Jue. contra": 21,
-      "% victorias": 0.571428571428571
+      "Jugados": 18,
+      "Ganados": 10,
+      "Perdidos": 8,
+      "Jue. favor": 40,
+      "Jue. contra": 33,
+      "% victorias": 0.555555555555556
     },
     {
       "Jugador": "Daniel Sanz",
-      "Jugados": 14,
-      "Ganados": 8,
-      "Perdidos": 6,
-      "Jue. favor": 21,
-      "Jue. contra": 27,
-      "% victorias": 0.571428571428571
+      "Jugados": 18,
+      "Ganados": 9,
+      "Perdidos": 9,
+      "Jue. favor": 33,
+      "Jue. contra": 39,
+      "% victorias": 0.5
     },
     {
       "Jugador": "Antonio Sanz",
-      "Jugados": 4,
+      "Jugados": 8,
       "Ganados": 0,
-      "Perdidos": 4,
+      "Perdidos": 8,
       "Jue. favor": 1,
-      "Jue. contra": 12,
+      "Jue. contra": 24,
       "% victorias": 0.0
     },
     {
@@ -76,12 +76,12 @@
   "Tercera Nacional": [
     {
       "Jugador": "Antonio García",
-      "Jugados": 10,
-      "Ganados": 6,
-      "Perdidos": 4,
-      "Jue. favor": 21,
-      "Jue. contra": 14,
-      "% victorias": 0.6
+      "Jugados": 12,
+      "Ganados": 7,
+      "Perdidos": 5,
+      "Jue. favor": 25,
+      "Jue. contra": 17,
+      "% victorias": 0.583333333333333
     },
     {
       "Jugador": "Antonio Sanz",
@@ -94,41 +94,41 @@
     },
     {
       "Jugador": "José Luis Cervigón",
-      "Jugados": 8,
-      "Ganados": 3,
-      "Perdidos": 5,
-      "Jue. favor": 13,
-      "Jue. contra": 19,
-      "% victorias": 0.375
+      "Jugados": 10,
+      "Ganados": 4,
+      "Perdidos": 6,
+      "Jue. favor": 16,
+      "Jue. contra": 22,
+      "% victorias": 0.4
     },
     {
       "Jugador": "Javier Bueno",
-      "Jugados": 6,
+      "Jugados": 8,
       "Ganados": 2,
-      "Perdidos": 4,
+      "Perdidos": 6,
       "Jue. favor": 8,
-      "Jue. contra": 13,
-      "% victorias": 0.333333333333333
+      "Jue. contra": 19,
+      "% victorias": 0.25
     }
   ],
   "División de Honor Territorial": [
     {
       "Jugador": "Julio Moragón",
-      "Jugados": 8,
-      "Ganados": 5,
+      "Jugados": 10,
+      "Ganados": 7,
       "Perdidos": 3,
-      "Jue. favor": 16,
+      "Jue. favor": 22,
       "Jue. contra": 13,
-      "% victorias": 0.625
+      "% victorias": 0.7
     },
     {
       "Jugador": "Rodrigo Martín",
-      "Jugados": 6,
-      "Ganados": 3,
+      "Jugados": 8,
+      "Ganados": 5,
       "Perdidos": 3,
-      "Jue. favor": 11,
+      "Jue. favor": 17,
       "Jue. contra": 10,
-      "% victorias": 0.5
+      "% victorias": 0.625
     },
     {
       "Jugador": "Ricardo Martín",
@@ -141,12 +141,12 @@
     },
     {
       "Jugador": "Mauro Martín",
-      "Jugados": 8,
-      "Ganados": 2,
-      "Perdidos": 6,
-      "Jue. favor": 13,
-      "Jue. contra": 18,
-      "% victorias": 0.25
+      "Jugados": 10,
+      "Ganados": 3,
+      "Perdidos": 7,
+      "Jue. favor": 18,
+      "Jue. contra": 22,
+      "% victorias": 0.3
     }
   ],
   "DOBLES": [
