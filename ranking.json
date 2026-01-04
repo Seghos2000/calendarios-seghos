@@ -11,29 +11,29 @@
     },
     {
       "Jugador": "Mikel Izkue",
-      "Jugados": 18,
-      "Ganados": 10,
+      "Jugados": 20,
+      "Ganados": 12,
       "Perdidos": 8,
-      "Jue. favor": 40,
-      "Jue. contra": 33,
-      "% victorias": 0.555555555555556
+      "Jue. favor": 46,
+      "Jue. contra": 37,
+      "% victorias": 0.6
     },
     {
       "Jugador": "Daniel Sanz",
-      "Jugados": 18,
-      "Ganados": 9,
-      "Perdidos": 9,
-      "Jue. favor": 33,
-      "Jue. contra": 39,
+      "Jugados": 20,
+      "Ganados": 10,
+      "Perdidos": 10,
+      "Jue. favor": 38,
+      "Jue. contra": 42,
       "% victorias": 0.5
     },
     {
       "Jugador": "Antonio Sanz",
-      "Jugados": 8,
+      "Jugados": 10,
       "Ganados": 0,
-      "Perdidos": 8,
+      "Perdidos": 10,
       "Jue. favor": 1,
-      "Jue. contra": 24,
+      "Jue. contra": 30,
       "% victorias": 0.0
     },
     {
@@ -81,7 +81,7 @@
       "Perdidos": 5,
       "Jue. favor": 25,
       "Jue. contra": 17,
-      "% victorias": 0.583333333333333
+      "% victorias": 0.5833333333333334
     },
     {
       "Jugador": "Antonio Sanz",
@@ -113,6 +113,24 @@
   ],
   "División de Honor Territorial": [
     {
+      "Jugador": "Jorge Arévalo",
+      "Jugados": 2,
+      "Ganados": 2,
+      "Perdidos": 0,
+      "Jue. favor": 6,
+      "Jue. contra": 1,
+      "% victorias": 1.0
+    },
+    {
+      "Jugador": "Diego Arévalo",
+      "Jugados": 2,
+      "Ganados": 2,
+      "Perdidos": 0,
+      "Jue. favor": 6,
+      "Jue. contra": 2,
+      "% victorias": 1.0
+    },
+    {
       "Jugador": "Julio Moragón",
       "Jugados": 10,
       "Ganados": 7,
@@ -141,12 +159,12 @@
     },
     {
       "Jugador": "Mauro Martín",
-      "Jugados": 10,
-      "Ganados": 3,
+      "Jugados": 12,
+      "Ganados": 5,
       "Perdidos": 7,
-      "Jue. favor": 18,
+      "Jue. favor": 24,
       "Jue. contra": 22,
-      "% victorias": 0.3
+      "% victorias": 0.4166666666666667
     }
   ],
   "DOBLES": [
