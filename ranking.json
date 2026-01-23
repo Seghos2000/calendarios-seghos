@@ -11,29 +11,29 @@
     },
     {
       "Jugador": "Mikel Izkue",
-      "Jugados": 20,
-      "Ganados": 12,
-      "Perdidos": 8,
-      "Jue. favor": 46,
-      "Jue. contra": 37,
-      "% victorias": 0.6
+      "Jugados": 24,
+      "Ganados": 13,
+      "Perdidos": 11,
+      "Jue. favor": 53,
+      "Jue. contra": 46,
+      "% victorias": 0.5416666666666666
     },
     {
       "Jugador": "Daniel Sanz",
-      "Jugados": 20,
-      "Ganados": 10,
-      "Perdidos": 10,
-      "Jue. favor": 38,
-      "Jue. contra": 42,
-      "% victorias": 0.5
+      "Jugados": 24,
+      "Ganados": 13,
+      "Perdidos": 11,
+      "Jue. favor": 48,
+      "Jue. contra": 47,
+      "% victorias": 0.5416666666666666
     },
     {
       "Jugador": "Antonio Sanz",
-      "Jugados": 10,
+      "Jugados": 14,
       "Ganados": 0,
-      "Perdidos": 10,
+      "Perdidos": 14,
       "Jue. favor": 1,
-      "Jue. contra": 30,
+      "Jue. contra": 42,
       "% victorias": 0.0
     },
     {
@@ -122,15 +122,6 @@
       "% victorias": 1.0
     },
     {
-      "Jugador": "Diego Arévalo",
-      "Jugados": 2,
-      "Ganados": 2,
-      "Perdidos": 0,
-      "Jue. favor": 6,
-      "Jue. contra": 2,
-      "% victorias": 1.0
-    },
-    {
       "Jugador": "Julio Moragón",
       "Jugados": 10,
       "Ganados": 7,
@@ -149,6 +140,15 @@
       "% victorias": 0.625
     },
     {
+      "Jugador": "Diego Arévalo",
+      "Jugados": 4,
+      "Ganados": 2,
+      "Perdidos": 2,
+      "Jue. favor": 7,
+      "Jue. contra": 8,
+      "% victorias": 0.5
+    },
+    {
       "Jugador": "Ricardo Martín",
       "Jugados": 2,
       "Ganados": 1,
@@ -159,12 +159,21 @@
     },
     {
       "Jugador": "Mauro Martín",
-      "Jugados": 12,
+      "Jugados": 14,
       "Ganados": 5,
-      "Perdidos": 7,
-      "Jue. favor": 24,
-      "Jue. contra": 22,
-      "% victorias": 0.4166666666666667
+      "Perdidos": 9,
+      "Jue. favor": 26,
+      "Jue. contra": 28,
+      "% victorias": 0.35714285714285715
+    },
+    {
+      "Jugador": "Valle Sanz",
+      "Jugados": 2,
+      "Ganados": 0,
+      "Perdidos": 2,
+      "Jue. favor": 0,
+      "Jue. contra": 6,
+      "% victorias": 0.0
     }
   ],
   "DOBLES": [
