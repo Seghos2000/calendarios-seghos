@@ -11,21 +11,30 @@
     },
     {
       "Jugador": "Mikel Izkue",
-      "Jugados": 24,
-      "Ganados": 13,
+      "Jugados": 26,
+      "Ganados": 15,
       "Perdidos": 11,
-      "Jue. favor": 53,
-      "Jue. contra": 46,
-      "% victorias": 0.5416666666666666
+      "Jue. favor": 59,
+      "Jue. contra": 47,
+      "% victorias": 0.5769230769230769
     },
     {
       "Jugador": "Daniel Sanz",
-      "Jugados": 24,
-      "Ganados": 13,
+      "Jugados": 26,
+      "Ganados": 15,
       "Perdidos": 11,
-      "Jue. favor": 48,
+      "Jue. favor": 54,
       "Jue. contra": 47,
-      "% victorias": 0.5416666666666666
+      "% victorias": 0.5769230769230769
+    },
+    {
+      "Jugador": "Xu Liutao",
+      "Jugados": 2,
+      "Ganados": 1,
+      "Perdidos": 1,
+      "Jue. favor": 4,
+      "Jue. contra": 3,
+      "% victorias": 0.5
     },
     {
       "Jugador": "Antonio Sanz",
@@ -122,6 +131,15 @@
       "% victorias": 1.0
     },
     {
+      "Jugador": "Rodrigo Martín",
+      "Jugados": 10,
+      "Ganados": 7,
+      "Perdidos": 3,
+      "Jue. favor": 23,
+      "Jue. contra": 13,
+      "% victorias": 0.7
+    },
+    {
       "Jugador": "Julio Moragón",
       "Jugados": 10,
       "Ganados": 7,
@@ -129,15 +147,6 @@
       "Jue. favor": 22,
       "Jue. contra": 13,
       "% victorias": 0.7
-    },
-    {
-      "Jugador": "Rodrigo Martín",
-      "Jugados": 8,
-      "Ganados": 5,
-      "Perdidos": 3,
-      "Jue. favor": 17,
-      "Jue. contra": 10,
-      "% victorias": 0.625
     },
     {
       "Jugador": "Diego Arévalo",
@@ -159,12 +168,12 @@
     },
     {
       "Jugador": "Mauro Martín",
-      "Jugados": 14,
-      "Ganados": 5,
+      "Jugados": 16,
+      "Ganados": 7,
       "Perdidos": 9,
-      "Jue. favor": 26,
-      "Jue. contra": 28,
-      "% victorias": 0.35714285714285715
+      "Jue. favor": 32,
+      "Jue. contra": 30,
+      "% victorias": 0.4375
     },
     {
       "Jugador": "Valle Sanz",
